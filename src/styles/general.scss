@@ -1,0 +1,14 @@
+@use './partials/vars' as *;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/@fontsource/montserrat';
+
+body {
+    font-family: $main-font;
+    color: $primary-color;
+    min-height: 100vh;
+    background-image: linear-gradient(
+        lighten($primary-color,75%),
+        lighten($primary-color,60%)
+    );
+}
