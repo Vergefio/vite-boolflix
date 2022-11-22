@@ -6,7 +6,7 @@ export default {
 
 <template>
   <div class="container">
-    movie list
+    ricerca
   </div>
 </template>
 

@@ -1,25 +1,38 @@
 <script>
 
 import axios from 'axios'
+import {store} from './data/store'
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import MovieList from './components/MovieList.vue';
 
 export default {
   name: 'App',
+  data(){
+    return{
+      store
+    }
+  },
   components:{
     AppHeader,
     AppMain,
     MovieList
   },
-  mounted:(){
-    axios.get('metteri qui API')
+  methods:{
+    getMovie(){
+      store.isLoaded = false;
+      axios.get(store.apiUrl)
     .then( result => {
-      console.log(result)
+      store.movieListData = result.data
+      store.isLoaded = true;
     }) 
     .catch( error => {
       console.log(error)
     })
+    }
+  },
+  mounted(){
+    this.getMovie()
   }
 }
 </script>
