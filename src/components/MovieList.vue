@@ -20,7 +20,7 @@ export default {
 
 <template>
 
-    <div class="container">
+    <div class="container h-100">
         <div v-if="store.isLoaded" class="row">
             <MovieCard
             v-for="movie in store.movieListData" 
@@ -29,7 +29,7 @@ export default {
             />
         </div>
         <div v-else> 
-            <AppLoading />
+            <AppLoading title="Boolflix loading"/>
         </div>
 
     </div>

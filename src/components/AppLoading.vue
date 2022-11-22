@@ -1,18 +1,28 @@
 <script>
 export default {
-    name: 'AppLoading'
+    name: 'AppLoading',
+    props:{
+        title: String
+    }
 }
 </script>
 
 <template>
 
-  <div class="lds-spinner"></div>
+    <div class="d-flex justify-content-center align-items-center loader flex-column">
+        <div>{{title}}...</div>
+        <div class="lds-spinner"></div>
+    </div>
 
 </template>
 
 <style lang="scss" scoped>
 
 @use '../styles/partials/vars' as *;
+
+.loader {
+    min-height: 500px;
+}
 
 .lds-spinner {
   color: official;
