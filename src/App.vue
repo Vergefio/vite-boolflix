@@ -22,6 +22,7 @@ export default {
     getMovie(){
       store.isLoaded = false;
       axios.get(store.apiUrl)
+      //{} params:{name:'', status:''}
     .then( result => {
       store.movieListData = result.data
       store.isLoaded = true;
